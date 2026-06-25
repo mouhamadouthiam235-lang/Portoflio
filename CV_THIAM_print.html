@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Mouhamadou Lamine Bara THIAM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0D1117;
+    color: #E6EDF3;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+  }
+
+  .cv-wrap {
+    display: grid;
+    grid-template-columns: 68mm 1fr;
+    min-height: 297mm;
+    width: 210mm;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: #010409;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    border-right: 1px solid #21262D;
+    min-height: 297mm;
+  }
+
+  .avatar {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: #0D2A33;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px; font-weight: 700;
+    color: #00B4D8;
+    margin: 0 auto 10px;
+    border: 2px solid #00B4D8;
+  }
+  .name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px; font-weight: 700;
+    color: #E6EDF3;
+    letter-spacing: .04em;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .title-badge {
+    margin: 6px auto 0;
+    display: block;
+    width: fit-content;
+    background: #0D2A33;
+    color: #00B4D8;
+    font-size: 9px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #00B4D8;
+    text-align: center;
+  }
+
+  .s-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px; color: #00B4D8;
+    letter-spacing: .12em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .contact-row {
+    display: flex; align-items: flex-start;
+    gap: 7px; font-size: 10px; color: #8B949E;
+    line-height: 1.5; margin-bottom: 3px;
+  }
+  .contact-row i { color: #00B4D8; font-size: 12px; margin-top: 1px; flex-shrink: 0; }
+  .contact-row a { color: #8B949E; text-decoration: none; }
+
+  .skill-pill {
+    display: inline-block;
+    background: #161B22;
+    border: 1px solid #21262D;
+    color: #CDD9E5;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin: 2px 2px 2px 0;
+  }
+  .skill-pill.hot { border-color: #00B4D8; color: #00B4D8; background: #0D2A33; }
+  .skill-pill.learning { border-color: #F0A500; color: #F0A500; background: #1F1800; }
+
+  .lang-row {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; padding: 3px 0;
+    border-bottom: 1px solid #161B22;
+  }
+  .lang-name { color: #CDD9E5; }
+  .lang-level { color: #8B949E; font-size: 9px; font-family: 'JetBrains Mono', monospace; }
+
+  .interest-chip {
+    display: inline-block;
+    background: #161B22; color: #8B949E;
+    font-size: 8.5px; padding: 2px 7px;
+    border-radius: 4px; margin: 2px 2px 2px 0;
+    border: 1px solid #21262D;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 24px 22px;
+    display: flex; flex-direction: column; gap: 20px;
+    background: #0D1117;
+  }
+
+  .terminal-bar {
+    background: #161B22;
+    border: 1px solid #21262D;
+    border-radius: 6px;
+    padding: 9px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px; color: #8B949E; line-height: 1.6;
+  }
+  .terminal-bar .prompt { color: #00B4D8; }
+  .terminal-bar .cmd { color: #E6EDF3; }
+  .terminal-bar .out { color: #3FB950; }
+
+  .section { display: flex; flex-direction: column; gap: 8px; }
+  .section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px; color: #00B4D8;
+    letter-spacing: .12em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after {
+    content: ''; flex: 1;
+    height: 1px; background: #21262D;
+  }
+
+  .card {
+    background: #161B22;
+    border: 1px solid #21262D;
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .card-head {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; gap: 8px;
+  }
+  .card-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 700; color: #E6EDF3;
+  }
+  .card-tag {
+    font-size: 8.5px; background: #0D2A33; color: #00B4D8;
+    padding: 2px 7px; border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap; flex-shrink: 0;
+    border: 1px solid #00B4D820;
+  }
+  .card-sub { font-size: 10px; color: #8B949E; }
+  .card-desc { font-size: 10px; color: #CDD9E5; line-height: 1.55; }
+
+  .tech-stack { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+  .t {
+    display: inline-block;
+    background: #0D1117; border: 1px solid #30363D;
+    color: #79C0FF;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px; padding: 2px 6px; border-radius: 3px;
+  }
+
+  .skills-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .skill-group-title {
+    font-size: 9px; color: #8B949E; margin-bottom: 5px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .legend {
+    display: flex; gap: 12px;
+    font-size: 8.5px; font-family: 'JetBrains Mono', monospace;
+    align-items: center; margin-bottom: 5px;
+  }
+  .legend-dot {
+    width: 7px; height: 7px; border-radius: 2px;
+    display: inline-block; margin-right: 3px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    @page { size: A4; margin: 0; }
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #0D1117 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+    .cv-wrap {
+      width: 210mm;
+      min-height: 297mm;
+      page-break-inside: avoid;
+    }
+    .sidebar { min-height: 297mm; }
+    a { text-decoration: none; }
+  }
+
+  /* Bouton visible seulement à l'écran */
+  .print-btn {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    background: #00B4D8; color: #010409;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    padding: 12px 22px;
+    border: none; border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,180,216,0.4);
+    z-index: 999;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .print-btn:hover { background: #00c8f0; }
+  @media print { .print-btn { display: none !important; } }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+  <i class="ti ti-printer"></i> Exporter en PDF
+</button>
+
+<div class="cv-wrap">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div style="text-align:center">
+      <div class="avatar">ML</div>
+      <div class="name">Mouhamadou Lamine<br>Bara THIAM</div>
+      <div class="title-badge">L3 Génie Logiciel</div>
+    </div>
+
+    <div>
+      <div class="s-label">Contact</div>
+      <div class="contact-row"><i class="ti ti-mail"></i>mlbara.thiam@univ-thies.sn</div>
+      <div class="contact-row"><i class="ti ti-phone"></i>77 288 28 50</div>
+      <div class="contact-row"><i class="ti ti-map-pin"></i>Dakar, Rufisque Ouest</div>
+      <div class="contact-row"><i class="ti ti-brand-linkedin"></i><a href="https://www.linkedin.com/in/mouhamadou-lamine-bara-thiam">LinkedIn</a></div>
+      <div class="contact-row"><i class="ti ti-brand-github"></i><a href="https://github.com/mouhamadouthiam235-lang">GitHub</a></div>
+      <div class="contact-row"><i class="ti ti-brand-gitlab"></i><a href="https://gitlab.com/mouhamadouthiam235">GitLab</a></div>
+    </div>
+
+    <div>
+      <div class="s-label">Stack</div>
+      <div class="legend">
+        <span><span class="legend-dot" style="background:#00B4D8"></span><span style="color:#8B949E">Maîtrisé</span></span>
+        <span><span class="legend-dot" style="background:#F0A500"></span><span style="color:#8B949E">En apprentissage</span></span>
+      </div>
+      <div>
+        <span class="skill-pill hot">Java</span>
+        <span class="skill-pill hot">Python</span>
+        <span class="skill-pill hot">PHP</span>
+        <span class="skill-pill hot">C</span>
+        <span class="skill-pill hot">SQL</span>
+        <span class="skill-pill hot">HTML/CSS</span>
+        <span class="skill-pill hot">JavaScript</span>
+        <span class="skill-pill learning">Dart/Flutter</span>
+        <span class="skill-pill learning">Laravel</span>
+        <span class="skill-pill learning">React</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="s-label">Outils & DevOps</div>
+      <div>
+        <span class="skill-pill">Git</span>
+        <span class="skill-pill">GitHub</span>
+        <span class="skill-pill">GitLab</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">VS Code</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="s-label">Langues</div>
+      <div class="lang-row"><span class="lang-name">Français</span><span class="lang-level">Natif</span></div>
+      <div class="lang-row"><span class="lang-name">Anglais</span><span class="lang-level">Lu / Écrit</span></div>
+      <div class="lang-row"><span class="lang-name">Espagnol</span><span class="lang-level">Lu / Écrit</span></div>
+    </div>
+
+    <div>
+      <div class="s-label">Centres d'intérêt</div>
+      <div>
+        <span class="interest-chip">Football</span>
+        <span class="interest-chip">F1</span>
+        <span class="interest-chip">Tech</span>
+        <span class="interest-chip">Géopolitique</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="terminal-bar">
+      <span class="prompt">$</span> <span class="cmd">whoami</span><br>
+      <span class="out">// Étudiant L3 Informatique · option Génie Logiciel · Systèmes d'Information</span><br>
+      <span class="out">// Passionné de développement logiciel, à la recherche d'un stage pour</span><br>
+      <span class="out">// contribuer à des projets concrets et approfondir mes compétences sur le terrain.</span>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="ti ti-school"></i> Formation</div>
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">Licence 3 Informatique — option Génie Logiciel</div>
+            <div class="card-sub">Université Iba Der THIAM de Thiès</div>
+          </div>
+          <div class="card-tag">En cours — 2025</div>
+        </div>
+        <div class="card-desc">Développement logiciel, systèmes d'information, bases de données avancées, UML, design patterns et architectures web. Pratique en Java, Python, Dart/Flutter, PHP/Laravel, React et Lisp.</div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">Certification SQL — Bases de données</div>
+            <div class="card-sub">OpenClassrooms</div>
+          </div>
+          <div class="card-tag">Certifiée</div>
+        </div>
+        <div class="card-desc">Requêtes avancées, modélisation relationnelle, optimisation. Projet final : base de données complète de gestion de cinéma.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="ti ti-code"></i> Projets</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Univ-Scheduler</div>
+          <div class="card-tag">Application Desktop</div>
+        </div>
+        <div class="card-desc">Application Java de gestion d'établissement scolaire : emplois du temps, salles, profils enseignants/étudiants.</div>
+        <div class="tech-stack"><span class="t">Java</span><span class="t">POO</span><span class="t">MVC</span><span class="t">Desktop</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Système de gestion hospitalière</div>
+          <div class="card-tag">Web Front + BDD</div>
+        </div>
+        <div class="card-desc">Application web de gestion des données d'un hôpital avec affichage dynamique et requêtes SQL avancées.</div>
+        <div class="tech-stack"><span class="t">HTML</span><span class="t">CSS</span><span class="t">JavaScript</span><span class="t">SQL</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Système de gestion d'élections</div>
+          <div class="card-tag">Web App</div>
+        </div>
+        <div class="card-desc">Application web de vote : authentification, résultats en temps réel via localStorage.</div>
+        <div class="tech-stack"><span class="t">HTML</span><span class="t">CSS</span><span class="t">JavaScript</span><span class="t">LocalStorage</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">BDD — Gestion des notes universitaires</div>
+          <div class="card-tag">Base de données</div>
+        </div>
+        <div class="card-desc">Modélisation et implémentation d'une base relationnelle complète pour notes, UEs et résultats académiques.</div>
+        <div class="tech-stack"><span class="t">SQL</span><span class="t">MySQL</span><span class="t">Modélisation</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="ti ti-cpu"></i> Compétences techniques</div>
+      <div class="skills-grid">
+        <div class="card">
+          <div class="skill-group-title">Langages maîtrisés</div>
+          <div>
+            <span class="skill-pill hot">Java</span>
+            <span class="skill-pill hot">Python</span>
+            <span class="skill-pill hot">PHP</span>
+            <span class="skill-pill hot">C</span>
+            <span class="skill-pill hot">JavaScript</span>
+            <span class="skill-pill hot">HTML/CSS</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="skill-group-title">En apprentissage actif</div>
+          <div>
+            <span class="skill-pill learning">Dart / Flutter</span>
+            <span class="skill-pill learning">Laravel</span>
+            <span class="skill-pill learning">React</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="skill-group-title">Bases de données</div>
+          <div>
+            <span class="skill-pill hot">SQL avancé</span>
+            <span class="skill-pill hot">MySQL</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="skill-group-title">DevOps & Outils</div>
+          <div>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">GitHub</span>
+            <span class="skill-pill">GitLab</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
